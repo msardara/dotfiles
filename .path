@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Homebrew
+UNAME_OUT="$(uname -s)"
+case "${UNAME_OUT}" in
+    Linux*)     BREW_PATH=/home/linuxbrew/.linuxbrew/bin/brew;;
+    Darwin*)    BREW_PATH=/opt/homebrew/bin/brew;;
+    *)          BREW_PATH="UNKNOWN:${UNAME_OUT}"
+esac
+
+eval "$(${BREW_PATH} shellenv)" 2> /dev/null
+
+# Export android platform tools
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+
+# Go
+export GOPATH=${HOME}/go
+export PATH=$PATH:${GOPATH}/bin
