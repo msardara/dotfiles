@@ -10,7 +10,8 @@ SCRIPT_PATH=$(
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 source ${SCRIPT_PATH}/.path
 
-## Install command-line tools using Homebrew.
+## Install iTerm2 tools using Homebrew.
+brew install --cask iterm2
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -51,11 +52,16 @@ brew install vim
 brew install grep
 brew install openssh
 brew install ssh-copy-id
-brew install tmux
 brew install gmp
 brew install git
 brew install git-lfs
 brew install wget
+
+######################################################################
+# Tmux
+######################################################################
+brew install tmux
+brew install reattach-to-usernamespace
 
 ######################################################################
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
