@@ -10,10 +10,14 @@ POWERLEVEL10K_PATH="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 ZSH_SUGGESTIONS_URL="https://github.com/zsh-users/zsh-autosuggestions"
 ZSH_SUGGESTIONS_PATH="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 
+TMUX_CONFIGURATION_URL="https://github.com/gpakosz/.tmux"
+TMUX_CONFIGURATION_PATH="${HOME}/.tmux"
+
 function setup_ohmyzsh() {
 	REPLACE_RC='no' sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	git clone --depth=1 ${POWERLEVEL10K_URL} "${POWERLEVEL10K_PATH}" 2> /dev/null || echo "Power Level 10K Already installed."
 	git clone ${ZSH_SUGGESTIONS_URL} "${ZSH_SUGGESTIONS_PATH}" 2> /dev/null || echo "ZSH suggestion already installed."
+	git clone ${TMUX_CONFIGURATION_URL} "${TMUX_CONFIGURATION_PATH}" 2> /dev/null || echo "Tmux configuration already installed."
 }
 
 function install_dotfiles() {
