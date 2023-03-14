@@ -11,9 +11,12 @@ esac
 eval "$(${BREW_PATH} shellenv)" 2> /dev/null
 
 # Export android platform tools
-export ANDROID_HOME=${HOME}/Library/Android/sdk
+export ANDROID_HOME=c/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 # Go
 export GOPATH=${HOME}/go
-export PATH=$PATH:${GOPATH}/bin
+export PATH=${PATH}:${GOPATH}/bin
+
+# Other packages installed under HOME
+export PATH=${PATH}:${HOME}/.local/bin
