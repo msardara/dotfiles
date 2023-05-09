@@ -86,8 +86,24 @@ plugins=(
     zsh-autosuggestions
     sudo
     copyfile
+    copybuffer
+    copypath
     dirhistory
     macos
+    gh
+    vscode
+    thefuck
+    golang
+    1password
+    docker
+    docker-compose
+    dotenv
+    git
+    helm
+    kubectl
+    nmap
+    rust
+    tmux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,3 +142,13 @@ source $ZSH/oh-my-zsh.sh
 
 # K8s integration
 command -v /usr/local/bin/kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
+
+# Delete a given line number in the known_hosts file.
+knownrm() {
+ re='^[0-9]+$'
+ if ! [[ ${1} =~ $re ]] ; then
+   echo "error: line number missing" >&2;
+ else
+   sed -i '' "${1}d" ~/.ssh/known_hosts
+ fi
+}

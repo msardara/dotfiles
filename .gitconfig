@@ -181,3 +181,6 @@
 [init]
 
 	defaultBranch = main
+[user]
+	name = Mauro Sardara
+	email = msardara@cisco.com
