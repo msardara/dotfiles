@@ -1,7 +1,3 @@
-if [ -f ~/.sources ]; then
-    . ~/.sources;
-fi
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
@@ -11,6 +7,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+[ -r ".path" ] && [ -f ".path" ] && source ".path"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -143,12 +140,7 @@ source $ZSH/oh-my-zsh.sh
 # K8s integration
 command -v /usr/local/bin/kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
 
-# Delete a given line number in the known_hosts file.
-knownrm() {
- re='^[0-9]+$'
- if ! [[ ${1} =~ $re ]] ; then
-   echo "error: line number missing" >&2;
- else
-   sed -i '' "${1}d" ~/.ssh/known_hosts
- fi
-}
+# Create aliases and export additional variables
+if [ -f ~/.sources ]; then
+    . ~/.sources;
+fi
