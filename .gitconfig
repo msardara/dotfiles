@@ -184,3 +184,7 @@
 [user]
 	name = Mauro Sardara
 	email = msardara@cisco.com
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	defaultKeyCommand = op read \"op://Employee/commit-sign-key/public key\"

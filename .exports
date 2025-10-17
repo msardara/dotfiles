@@ -35,3 +35,6 @@ export GPG_TTY=${TTY}
 
 # Hide the “default interactive shell is now zsh” warning on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# SSH agent socket path
+export SSH_AUTH_SOCK="/Users/msardara/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
