@@ -134,9 +134,6 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# iTerm2 integration
-[[ "${TERM_PROGRAM}" == "iTerm.app" ]] && source ~/.iterm2_shell_integration.zsh
-
 # K8s integration
 command -v /usr/local/bin/kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
 

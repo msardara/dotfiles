@@ -39,3 +39,4 @@ if which brew &> /dev/null && [ -r "$(brew --prefix)/etc/profile.d/bash_completi
 elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
+. "$HOME/.cargo/env"

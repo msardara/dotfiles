@@ -65,6 +65,7 @@
 
 	# Show the user email for the current repository.
 	whoami = config user.email
+	committ = !git commit -s
 
 [apply]
 
@@ -188,3 +189,5 @@
 	format = ssh
 [gpg "ssh"]
 	defaultKeyCommand = op read \"op://Employee/commit-sign-key/public key\"
+[format]
+	signoff = true
