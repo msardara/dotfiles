@@ -8,7 +8,7 @@ case "${UNAME_OUT}" in
     *)          BREW_PATH="UNKNOWN:${UNAME_OUT}"
 esac
 
-eval "$(${BREW_PATH} shellenv)" 2> /dev/null
+[ -x "${BREW_PATH}" ] && eval "$(${BREW_PATH} shellenv)"
 
 # Export android platform tools
 export ANDROID_HOME=c/Library/Android/sdk

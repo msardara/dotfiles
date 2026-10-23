@@ -89,7 +89,6 @@ plugins=(
     macos
     gh
     vscode
-    thefuck
     golang
     1password
     docker
